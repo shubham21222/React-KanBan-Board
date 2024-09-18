@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.inputDiv {
+     display: flex;
+     margin-top: 15px;
+     flex-direction: column;
+}
+
+
+
