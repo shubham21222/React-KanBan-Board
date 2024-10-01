@@ -29,7 +29,6 @@ const Register = () => {
         formData
       );
 
-      // Check if the response is successful
       if (response.status === 200 || response.status === 201) {
         setMessage("User registered successfully!");
 
@@ -42,7 +41,6 @@ const Register = () => {
           role: "Investor",
         });
       } else {
-        // Handle cases where the response status is not as expected
         setMessage(response.data.message || "Registration failed");
       }
     } catch (error) {
@@ -53,14 +51,12 @@ const Register = () => {
     }
   };
 
-  // Set up Pusher for real-time notifications
   React.useEffect(() => {
     // Initialize Pusher
     const pusher = new Pusher("6b486187e408b11e5597", {
       cluster: "ap2",
     });
 
-    // Subscribe to the `user-channel`
     const channel = pusher.subscribe("user-channel");
 
     // Listen for the `user-registered` event
